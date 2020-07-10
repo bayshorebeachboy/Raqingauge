@@ -1,0 +1,21 @@
+const byte interruptPin = 2;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+
+  pinMode(interruptPin, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(interruptPin), pluse, RISING);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  // like forever if nothing to stop it
+  //Wherever you want to write to serial:
+  //Serial.print("write this");
+}
+void pluse() {
+  //state = !state;
+  Serial.print("pluse detected...");
+  Serial.print("\n");
+}
